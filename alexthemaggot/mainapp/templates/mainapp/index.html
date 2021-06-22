@@ -2,8 +2,49 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(65373439, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/65373439" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    {# Favicons #}
+    <link sizes="57x57" rel="apple-touch-icon" href="{% static 'img/favicons/apple-touch-icon-57x57.png' %}">
+    <link sizes="60x60" rel="apple-touch-icon" href="{% static 'img/favicons/apple-touch-icon-60x60.png' %}">
+    <link sizes="72x72" rel="apple-touch-icon" href="{% static 'img/favicons/apple-touch-icon-72x72.png' %}">
+    <link sizes="76x76" rel="apple-touch-icon" href="{% static 'img/favicons/apple-touch-icon-76x76.png' %}">
+    <link sizes="114x114" rel="apple-touch-icon" href="{% static 'img/favicons/apple-touch-icon-114x114.png' %}">
+    <link sizes="120x120" rel="apple-touch-icon" href="{% static 'img/favicons/apple-touch-icon-120x120.png' %}">
+    <link sizes="144x144" rel="apple-touch-icon" href="{% static 'img/favicons/apple-touch-icon-144x144.png' %}">
+    <link sizes="152x152" rel="apple-touch-icon" href="{% static 'img/favicons/apple-touch-icon-152x152.png' %}">
+    <link sizes="180x180" rel="apple-touch-icon" href="{% static 'img/favicons/apple-touch-icon-180x180.png' %}">
+    {# End Favicons #}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/jquery_v3.5.1.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
@@ -28,7 +69,8 @@
                 <ul class="social_block__list">
                     <li class="social_block__item">
                         <a href="https://www.instagram.com/alexthemaggot/" class="social_block__link">
-                            <svg class="social_block__img social_block__img_instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+                            <svg class="social_block__img social_block__img_instagram"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
                                 <path d="M500,50c60.77,0,119.7,11.89,175.15,35.34C728.72,108,776.85,140.46,818.2,181.8c41.34,41.34,73.8,89.47,96.46,143.05
 	                                C938.11,380.3,950,439.23,950,500s-11.89,119.7-35.34,175.15c-22.66,53.58-55.12,101.71-96.46,143.05
 	                                c-41.34,41.34-89.47,73.8-143.05,96.46C619.7,938.11,560.77,950,500,950s-119.7-11.89-175.14-35.34
@@ -47,7 +89,8 @@
                         </a>
                     <li class="social_block__item">
                         <a href="https://t.me/alexthemaggot" class="social_block__link">
-                            <svg class="social_block__img social_block__img_telegram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+                            <svg class="social_block__img social_block__img_telegram" xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 1000 1000">
                                 <path d="M500,50c60.77,0,119.7,11.89,175.15,35.34C728.72,108,776.85,140.46,818.2,181.8c41.34,41.34,73.8,89.47,96.46,143.05
 	                                C938.11,380.3,950,439.23,950,500s-11.89,119.7-35.34,175.15c-22.66,53.58-55.12,101.71-96.46,143.05
 	                                c-41.34,41.34-89.47,73.8-143.05,96.46C619.7,938.11,560.77,950,500,950s-119.7-11.89-175.14-35.34
@@ -62,7 +105,8 @@
                         </a>
                     <li class="social_block__item">
                         <a href="https://api.whatsapp.com/send?phone=998933353877" class="social_block__link">
-                            <svg class="social_block__img social_block__img_whatsapp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+                            <svg class="social_block__img social_block__img_whatsapp" xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 1000 1000">
                                 <path d="M500,50c60.77,0,119.7,11.89,175.15,35.34C728.72,108,776.85,140.46,818.2,181.8c41.34,41.34,73.8,89.47,96.46,143.05
 	                                C938.11,380.3,950,439.23,950,500s-11.89,119.7-35.34,175.15c-22.66,53.58-55.12,101.71-96.46,143.05
 	                                c-41.34,41.34-89.47,73.8-143.05,96.46C619.7,938.11,560.77,950,500,950s-119.7-11.89-175.14-35.34
@@ -70,13 +114,13 @@
 	                                s11.89-119.7,35.34-175.14C108,271.28,140.46,223.15,181.8,181.8c41.34-41.34,89.47-73.8,143.05-96.46C380.3,61.89,439.23,50,500,50
 	                                M500,0C223.86,0,0,223.86,0,500s223.86,500,500,500s500-223.86,500-500S776.14,0,500,0L500,0z"/>
                                 <g>
-	                                <path class="st2" d="M500,747.59c-43.81,0-86.93-11.65-124.67-33.71c-4.05-2.37-8.62-3.58-13.22-3.58c-2.32,0-4.64,0.3-6.93,0.93
+                                    <path class="st2" d="M500,747.59c-43.81,0-86.93-11.65-124.67-33.71c-4.05-2.37-8.62-3.58-13.22-3.58c-2.32,0-4.64,0.3-6.93,0.93
 		                                l-82.03,22.51l28.57-62.94c3.89-8.56,2.9-18.54-2.6-26.16c-30.56-42.36-46.72-92.38-46.72-144.66
 		                                c0-136.53,111.07-247.6,247.6-247.6s247.6,111.07,247.6,247.6S636.53,747.59,500,747.59L500,747.59z M500,200
 		                                C334.58,200,200,334.58,200,499.99c0,58.2,16.52,114.08,47.91,162.58l-45.57,100.39c-4.21,9.26-2.67,20.11,3.92,27.83
 		                                c5.05,5.92,12.38,9.2,19.94,9.2c2.3,0,4.63-0.3,6.92-0.94l125.57-34.45C402.05,787.79,450.66,800,500,800
 		                                c165.42,0,300-134.59,300-300S665.41,200,500,200L500,200z"/>
-	                                <path class="st2" d="M615.33,544.92c-12.56-7.51-28.91-15.91-43.71-9.85c-11.36,4.64-18.6,22.42-25.97,31.5
+                                    <path class="st2" d="M615.33,544.92c-12.56-7.51-28.91-15.91-43.71-9.85c-11.36,4.64-18.6,22.42-25.97,31.5
 		                                c-3.78,4.65-8.28,5.38-14.08,3.05c-42.61-16.98-75.29-45.43-98.81-84.64c-3.99-6.08-3.27-10.89,1.54-16.54
 		                                c7.1-8.36,16.03-17.87,17.95-29.14c1.92-11.27-3.37-24.46-8.03-34.49c-5.96-12.83-12.62-31.13-25.45-38.37
 		                                c-11.82-6.68-27.37-2.94-37.9,5.63c-18.16,14.79-26.93,37.96-26.67,60.94c0.08,6.53,0.88,13.05,2.4,19.34
@@ -88,7 +132,8 @@
                         </a>
                     <li class="social_block__item">
                         <a href="https://vk.com/alexthemaggot" class="social_block__link">
-                            <svg class="social_block__img  social_block__img_vk" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+                            <svg class="social_block__img  social_block__img_vk" xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 1000 1000">
                                 <path d="M500,50c60.77,0,119.7,11.89,175.15,35.34C728.72,108,776.85,140.46,818.2,181.8c41.34,41.34,73.8,89.47,96.46,143.05
 	                                C938.11,380.3,950,439.23,950,500s-11.89,119.7-35.34,175.15c-22.66,53.58-55.12,101.71-96.46,143.05
 	                                c-41.34,41.34-89.47,73.8-143.05,96.46C619.7,938.11,560.77,950,500,950s-119.7-11.89-175.14-35.34
@@ -119,7 +164,7 @@
                     <label class="form-block__label" for="whatsapp">WhatsApp</label>
                     <input class="form-block__checkbox" type="checkbox" id="viber" name="viber" value="True">
                     <label class="form-block__label" for="viber">Viber</label>
-                    <input class="form-block__checkbox" type="checkbox" id="skype"name="skype" value="True">
+                    <input class="form-block__checkbox" type="checkbox" id="skype" name="skype" value="True">
                     <label class="form-block__label" for="skype">Skype</label>
                     <input class="form-block__submit" type="submit">
                 </form>
@@ -128,4 +173,5 @@
     </div>
 </div>
 </body>
+<!-- Powered by AlexTheMaggot -->
 </html>
