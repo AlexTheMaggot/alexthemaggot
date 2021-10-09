@@ -152,7 +152,7 @@
                 </ul>
             </div>
             <div class="form-block form-block_closed form-block_none" id="form-block">
-                <form action="{% url 'sendorder' %}" method="POST" autocomplete="off">
+                <form action="{% url 'mainapp:sendorder' %}" method="POST" autocomplete="off">
                     {% csrf_token %}
                     <p class="form-block__title">Введите имя, номер телефона и комментарий</p>
                     <input class="form-block__input" type="text" name="name" placeholder="Имя">
