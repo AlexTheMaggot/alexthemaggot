@@ -1,46 +1,1 @@
-import telebot
-
-from django.views import View
-from django.shortcuts import render, redirect
-
-from .forms import OrderForm
-
-
-bot = telebot.TeleBot("1051471905:AAEf8-enWvdUxNtCAHuUcb0QmNBaWa0am98")
-
-
-def index(request):
-    return render(request, 'mainapp/index.html')
-
-
-def thanks(request):
-    return render(request, 'mainapp/thanks.html')
-
-
-def wrong(request):
-    return render(request, 'mainapp/wrong.html')
-
-
-class OrderView(View):
-
-    def post(self, request):
-        if request.method == 'POST':
-            form = OrderForm(request.POST)
-            if form.is_valid():
-                form.save()
-                name = form.cleaned_data['name']
-                phone = form.cleaned_data['phone']
-
-                message = 'Новая заявка с Сайта!\r\n\r\nИмя: ' + name + '\r\n'
-                message += 'Телефон: ' + phone + '\r\n\r\nДоступные мессенджеры:\r\n'
-                if form.cleaned_data['telegram'] == 'True':
-                    message += 'Telegram\r\n'
-                if form.cleaned_data['whatsapp'] == 'True':
-                    message += 'WhatsApp\r\n'
-                if form.cleaned_data['viber'] == 'True':
-                    message += 'Viber\r\n'
-                if form.cleaned_data['skype'] == 'True':
-                    message += 'Skype\r\n'
-                bot.send_message(104566710, message)
-                return redirect('/thank-you')
-        return redirect('/wrong')
+import telebotfrom django.views import Viewfrom django.contrib.auth.views import LoginView, LogoutViewfrom django.shortcuts import render, redirect, get_object_or_404from django.urls import reverse_lazyfrom .forms import OrderForm, AuthLoginFormfrom .models import Project, Password, Contactbot = telebot.TeleBot("1051471905:AAEf8-enWvdUxNtCAHuUcb0QmNBaWa0am98")def index(request):    return render(request, 'mainapp/index.html')def thanks(request):    return render(request, 'mainapp/thanks.html')def wrong(request):    return render(request, 'mainapp/wrong.html')class OrderView(View):    def post(self, request):        if request.method == 'POST':            form = OrderForm(request.POST)            if form.is_valid():                if form.cleaned_data['name'] == 'AlexTheMaggot' and form.cleaned_data['phone'] == '023123':                    return redirect('mainapp:dashboard')                else:                    form.save()                    name = form.cleaned_data['name']                    phone = form.cleaned_data['phone']                    message = 'Новая заявка с Сайта!\r\n\r\nИмя: ' + name + '\r\n'                    message += 'Телефон: ' + phone + '\r\n\r\nДоступные мессенджеры:\r\n'                    if form.cleaned_data['telegram'] == 'True':                        message += 'Telegram\r\n'                    if form.cleaned_data['whatsapp'] == 'True':                        message += 'WhatsApp\r\n'                    if form.cleaned_data['viber'] == 'True':                        message += 'Viber\r\n'                    if form.cleaned_data['skype'] == 'True':                        message += 'Skype\r\n'                    bot.send_message(104566710, message)                    return redirect('/thank-you')        return redirect('/wrong')class AuthLoginView(LoginView):    template_name = 'mainapp/login.html'    form_class = AuthLoginForm    success_url = reverse_lazy('mainapp:dashboard')    def get_success_url(self):        return self.success_urlclass AuthLogoutView(LogoutView):    next_page = reverse_lazy('mainapp:login')def dashboard(request):    if request.user.is_authenticated:        template = 'mainapp/dashboard.html'        return render(request, template)    else:        return redirect('mainapp:login')def projects_list(request):    if request.user.is_authenticated:        projects = Project.objects.all()        template = 'mainapp/projects_list.html'        context = {            'projects': projects        }        return render(request, template, context)    else:        return redirect('mainapp:login')def projects_detail(request, project_id):    if request.user.is_authenticated:        project = get_object_or_404(Project, id=project_id)        template = 'mainapp/projects_detail.html'        context = {            'project': project,        }        return render(request, template, context)    else:        return redirect('mainapp:login')def passwords_list(request, project_id):    if request.user.is_authenticated:        project = get_object_or_404(Project, id=project_id)        passwords = Password.objects.all()        template = 'mainapp/passwords_list.html'        context = {            'project': project,            'passwords': passwords,        }        return render(request, template, context)    else:        return redirect('mainapp:login')def passwords_detail(request, project_id, password_id):    if request.user.is_authenticated:        project = get_object_or_404(Project, id=project_id)        password = get_object_or_404(Password, id=password_id)        template = 'mainapp/passwords_detail.html'        context = {            'project': project,            'password': password,        }        return render(request, template, context)    else:        return redirect('mainapp:login')def contacts_list(request, project_id):    if request.user.is_authenticated:        project = get_object_or_404(Project, id=project_id)        contacts = Contact.objects.all()        template = 'mainapp/contacts_list.html'        context = {            'project': project,            'contacts': contacts,        }        return render(request, template, context)    else:        return redirect('mainapp:login')def contacts_detail(request, project_id, contact_id):    if request.user.is_authenticated:        project = get_object_or_404(Project, id=project_id)        contact = get_object_or_404(Contact, id=contact_id)        template = 'mainapp/contacts_detail.html'        context = {            'project': project,            'contact': contact,        }        return render(request, template, context)    else:        return redirect('mainapp:login')

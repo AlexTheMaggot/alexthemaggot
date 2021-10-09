@@ -1,14 +1,1 @@
-from django.db import models
-
-
-class Order(models.Model):
-    name = models.CharField(max_length=200)
-    phone = models.CharField(max_length=20)
-    telegram = models.CharField(max_length=20, null=True, blank=True)
-    whatsapp = models.CharField(max_length=20, null=True, blank=True)
-    viber = models.CharField(max_length=20, null=True, blank=True)
-    skype = models.CharField(max_length=20, null=True, blank=True)
-    date = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.name
+from django.db import modelsclass Order(models.Model):    name = models.CharField(max_length=200)    phone = models.CharField(max_length=20)    telegram = models.CharField(max_length=20, null=True, blank=True)    whatsapp = models.CharField(max_length=20, null=True, blank=True)    viber = models.CharField(max_length=20, null=True, blank=True)    skype = models.CharField(max_length=20, null=True, blank=True)    date = models.DateTimeField(auto_now_add=True)    def __str__(self):        return self.nameclass Project(models.Model):    name = models.CharField(max_length=2000)    description = models.TextField()    def __str__(self):        return self.nameclass Password(models.Model):    name = models.CharField(max_length=200)    login = models.CharField(max_length=200)    password = models.CharField(max_length=200)    description = models.TextField()    project = models.ForeignKey(Project, on_delete=models.PROTECT, related_name='passwords')    def __str__(self):        return self.nameclass Contact(models.Model):    name = models.CharField(max_length=200)    contact = models.CharField(max_length=200)    description = models.TextField()    project = models.ForeignKey(Project, on_delete=models.PROTECT, related_name='contacts')    def __str__(self):        return self.name

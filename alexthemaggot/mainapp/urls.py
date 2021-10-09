@@ -1,10 +1,1 @@
-from django.urls import path
-from . import views
-
-
-urlpatterns = [
-    path('', views.index, name='index'),
-    path('sendorder/', views.OrderView.as_view(), name='sendorder'),
-    path('thank-you/', views.thanks, name='thanks'),
-    path('wrong', views.wrong, name='wrong'),
-]
+from django.urls import pathfrom . import viewsapp_name = 'mainapp'urlpatterns = [    path('', views.index, name='index'),    path('sendorder/', views.OrderView.as_view(), name='sendorder'),    path('thank-you/', views.thanks, name='thanks'),    path('wrong/', views.wrong, name='wrong'),    # CRM    path('login/', views.AuthLoginView.as_view(), name='login'),    path('logout/', views.AuthLogoutView.as_view(), name='logout'),    path('dashboard/', views.dashboard, name='dashboard'),    path('projects/', views.projects_list, name='projects_list'),    path('projects/<int:project_id>', views.projects_detail, name='projects_detail'),    path('projects/<int:project_id>/passwords/', views.passwords_list, name='passwords_list'),    path('projects/<int:project_id>/passwords/<int:password_id>', views.passwords_detail, name='passwords_detail'),    path('projects/<int:project_id>/contacts/', views.contacts_list, name='contacts_list'),    path('projects/<int:project_id>/contacts/<int:contact_id>', views.contacts_detail, name='contacts_detail'),    # End CRM]
